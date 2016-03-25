@@ -22,9 +22,11 @@ class HtmlParser(object):
 		title_node = soup.find('dd',class_='lemmaWgt-lemmaTitle-title').find("h1")
 		res_data['title'] = title_node.get_text()
 
-        #<div class="lemma-summary">
+                #<div class="lemma-summary">
 		summary_node = soup.find('div',class_="lemma-summary")
 		res_data['summary'] = summary_node.get_text()
+		
+		return res_data
 
 	def parse(self,page_url,html_cont):
 		if page_url is None or html_cont is None:
